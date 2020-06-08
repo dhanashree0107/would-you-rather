@@ -1,4 +1,4 @@
-const logger = (store) => (next) => (action) => {
+const middleware = (store) => (next) => (action) => {
     console.group(action.type)
     console.log("Action: ", action)
     const returnValue = next(action)
@@ -7,4 +7,4 @@ const logger = (store) => (next) => (action) => {
     return returnValue
 }
 
-export default logger
+export default middleware

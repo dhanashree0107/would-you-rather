@@ -1,26 +1,24 @@
-import { hideLoading, showLoading } from 'react-redux-loading'
-import { addUser } from "../Utils/api"
+//import { addUser } from "../Utils/api"
 export const GET_USERS = "GET_USERS"
 
 
-export function receiveUsers(users) {
+export function getUsers(users) {
     return {
         type: GET_USERS,
         users
     }
 }
 
-export function handleAddUser(username, name, avatarURL) {
+/*export function handleAddUser(username, name, avatarURL) {
     return (dispatch) => {
-        dispatch(showLoading())
         return addUser({
                 username,
                 name,
                 avatarURL
             })
             .then((users) => {
-                dispatch(receiveUsers(users))
-                dispatch(hideLoading())
+                dispatch(getUsers(users))
             })
     }
 }
+*/

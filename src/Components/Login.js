@@ -2,9 +2,7 @@ import React from 'react'
 import {Button, Form, FormGroup} from 'reactstrap'
 import {setAuthedUser} from "../Actions/authedUser"
 import {connect} from 'react-redux'
-//import users from '../_DATA'
 
- //Object.values(users).map((user) => ({ key: user.id,value: user.name,text: user.name, image: { avatar: true, src: user.avatarURL } }))
 class Login extends React.Component {
     state ={
         username:'',
