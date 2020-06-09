@@ -1,15 +1,12 @@
-import { LOGIN, LOGOUT } from '../Actions/authedUser'
+import { LOGOUT, LOGIN } from '../actions/authedUser'
 
-
-const authedUser = (state = {}, action) => {
+export default function authedUser(state = null, action) {
     switch (action.type) {
         case LOGIN:
-            return action.id
+            return action.id;
         case LOGOUT:
-            return {}
+            return null;
         default:
             return state
     }
 }
-
-export default authedUser

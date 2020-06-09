@@ -1,35 +1,50 @@
-import React,{Fragment} from 'react';
-import '../App.css';
-import Login from './Login'
-//import Dashboard from './Dashboard';
-//import Learderboard from './Leaderboard';
-import handleInitialData from "../Actions/shared"
-import {connect} from 'react-redux'
-import {BrowserRouter as Router, Route} from 'react-router-dom'
+import React, { Component, Fragment } from 'react'
+import { connect } from 'react-redux'
+import PropTypes from 'prop-types'
+import { BrowserRouter as Router } from 'react-router-dom';
+//import '../App.css'
+import { handleInitialData }  from '../actions/shared'
+import Routes from './Routes'
+import NavBar from './NavBar';
 
-class App extends React.Component{
-  componentDidMount() {
-    this.props.dispatch(handleInitialData())
-}
-render(){
-  return (
-    <Router>
-        <Fragment> 
-            {this.props.loading === true
-                ? null
-                : <div>
-                    <Route path="/login" component={Login}/>
-                </div>}
+class App extends Component {
+  componentDidMount(){
+    this.props.handleInitialData()
+  }
+  render() {
+    const { notLoggedIn } = this.props;
+
+    return (
+      <Router>
+        <Fragment>
+          <div className="main-container">
+            <NavBar/>
+            <Routes notLoggedIn={notLoggedIn}/>
+          </div>
         </Fragment>
-    </Router>
-);
-}
+      </Router>
+    );
+  }
 }
 
-function mapStateToProps({authedUser}) {
+App.propTypes = {
+  handleInitialData : PropTypes.func.isRequired,
+  notLoggedIn: PropTypes.bool.isRequired
+};
+
+function mapStateToProps ({ authedUser }) {
   return {
-      authedUser,
-   loading: authedUser === null
- }
+    notLoggedIn: authedUser === null
+  }
 }
-export default connect(mapStateToProps)(App);
+
+function mapDispatchToProps(dispatch) {
+  return {
+    handleInitialData: () => {
+      dispatch(handleInitialData())
+    }
+  }
+}
+
+
+export default connect(mapStateToProps, mapDispatchToProps)(App)

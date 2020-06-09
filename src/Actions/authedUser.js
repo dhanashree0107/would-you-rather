@@ -1,12 +1,15 @@
-export const LOGIN = 'LOGIN';
-export const LOGOUT = 'LOGOUT'
+export const LOGIN = 'LOG_IN';
+export const LOGOUT = 'LOG_OUT'
 
-export const setAuthedUser = (id) => ({
-    type: LOGIN,
-    id
-})
+export function LogIn(id) {
+    return {
+        type: LOGIN,
+        id
+    }
+}
 
-export const LogOut = (id) => ({
-    type: LOGOUT,
-    id
-})
+export function LogOut() {
+    return {
+        type: LOGOUT
+    }
+}
