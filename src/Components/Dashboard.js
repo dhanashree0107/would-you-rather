@@ -26,16 +26,14 @@ class DashBoard extends PureComponent {
           <NavItem>
             <NavLink
               className={classnames({ active: this.state.activeTab === '1' })}
-              onClick={() => { this.toggle('1'); }}
-            >
+              onClick={() => { this.toggle('1'); }}>
               Unanswered
             </NavLink>
           </NavItem>
           <NavItem>
             <NavLink
               className={classnames({ active: this.state.activeTab === '2' })}
-              onClick={() => { this.toggle('2'); }}
-            >
+              onClick={() => { this.toggle('2'); }}>
               Answered
             </NavLink>
           </NavItem>

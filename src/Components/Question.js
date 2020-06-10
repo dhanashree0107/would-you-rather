@@ -15,7 +15,7 @@ class Question extends React.Component {
   render() {
     const {question, auth} = this.props;
     return (
-      <Card onClick={(e) => this.loadQuestionDetails(e, question.id)}>
+      <Card onClick={(e) => this.loadQuestionDetails(e, question.id)} className='card'>
         <CardBody>
           <CardTitle>Would You Rather</CardTitle>
           <ul>

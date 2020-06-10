@@ -22,7 +22,7 @@ class NavBar extends PureComponent {
     return (
       <div>
         <Navbar bg="primary" variant="dark" light expand="md" style={{backgroundColor:'aqua'}}>
-          <NavbarBrand tag={Link}  to="/">Would You Rather</NavbarBrand>
+          <NavbarBrand tag={Link}  to="/" className='link' style={{backgroundColor:'pink',fontSize:24}}>Would You Rather</NavbarBrand>
           {authedUser &&
           <Fragment>
             <NavbarToggler onClick={this.toggle}/>
