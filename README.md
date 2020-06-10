@@ -4,7 +4,7 @@
 
 This app was built as a project for the Udacity React Nanodegree Program. The purpose of the project is to demonstrate understanding of how Redux works in a React-based web app.
 
-## Overviw
+## Overview
 
 * The game is based on the Would You Rather Game , where you can login as a user from the list and
 
